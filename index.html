@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiceflow Chat with Image Upload</title>
+</head>
+<body>
+    <!-- Voiceflow Chat Widget -->
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                // Load extensions after Voiceflow loads
+                var script = document.createElement('script');
+                script.src = './extensions.js';'./credentials.js'
+                document.body.appendChild(script);
+
+                window.voiceflow.chat.load({
+                    verify: { projectID: '674ffbb4f8ed29bcbd9e2182' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html> 
